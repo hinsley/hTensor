@@ -1,0 +1,41 @@
+name:                hTensor
+version:             0.1.0.0
+synopsis:            TensorFlow binding
+description:         Please see README.md
+homepage:            https://github.com/xnil/hTensor#readme
+license:             MIT
+license-file:        LICENSE
+author:              Carter Hinsley
+maintainer:          carterhinsley@outlook.com
+copyright:           2016 Carter Hinsley
+category:            ML
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable hTensor-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , hTensor
+  default-language:    Haskell2010
+
+test-suite hTensor-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , hTensor
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/xnil/hTensor
