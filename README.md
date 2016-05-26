@@ -1,2 +1,2 @@
 # hTensor
-TensorFlow binding for Haskell
+TensorFlow wrapper for Haskell
